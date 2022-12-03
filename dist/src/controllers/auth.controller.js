@@ -96,6 +96,12 @@ class AuthController {
     static async voteHandler(data) {
         try {
             const { email, beVoted, type } = data;
+            if (email === "") {
+                return {
+                    status: 400,
+                    message: "Email not valid"
+                };
+            }
             const checkVoted = await voted_schame_1.default.findOne({ email });
             if (checkVoted) {
                 return {
@@ -136,6 +142,12 @@ class AuthController {
     static async getVoteListHandler(data) {
         try {
             const { email, password } = data;
+            if (email === "") {
+                return {
+                    status: 400,
+                    message: "Email not valid"
+                };
+            }
             const checkUser = await user_schema_1.default.findOne({ email });
             if (!checkUser) {
                 return {
