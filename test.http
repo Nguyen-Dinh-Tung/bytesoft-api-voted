@@ -1,0 +1,33 @@
+GET http://localhost:8080/admin/list
+###
+POST http://localhost:8080/admin/register
+Content-Type: application/json
+
+{
+      "firstname": "tuyen1",
+      "lastname": "admin2",
+      "username": "tuyen1",
+      "email":"hanhngao3010@gmail.com",
+      "phone": "0909090909",
+      "password": "123123"
+}
+###
+DELETE  http://localhost:8080/admin/delete/634b7da9c01fb6090919e190
+###
+POST  http://localhost:8080/admin/login
+Content-Type: application/json
+
+{
+      "email":"hanhngao3010@gmail.com",
+      "password": "123123"
+}
+###
+GET http://localhost:8080/admin/listMp3
+###
+
+POST  http://localhost:8080/admin/findUser
+Content-Type: application/json
+
+{
+      "id":"6350ffdb205f3925d49c95ec"
+}
